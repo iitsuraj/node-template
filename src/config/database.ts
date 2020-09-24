@@ -1,8 +1,16 @@
-import config from './index';
-export default {
-    async connect() {
-        let client = await MongoClient.connect(config.databaseURL, {
-            authSource: 'admin',
-        }).catch((err: any): void => console.warn(err));
-    },
+import mongoose from 'mongoose';
+import { Db } from 'mongodb';
+import config from 'src/config';
+
+export default async (): Promise<void> => {
+    const connection = await mongoose
+        .connect(config.databaseURL, {
+            useUnifiedTopology: true,
+            useCreateIndex: true,
+            useNewUrlParser: true,
+        })
+        .catch(console.warn);
+    if (connection) {
+        console.log('connected');
+    }
 };

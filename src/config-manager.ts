@@ -11,21 +11,21 @@ class Config {
         this.fetchConfig();
     }
 
-    fetchConfig() {
+    fetchConfig(): void {
         fs.readdirSync(this.path).forEach(file => {
             const name = this.getFileName(file);
             if (name) {
-                this.config[name] = require(`app/config/${name}`);
+                this.config[name] = require(`src/config/${name}`);
             }
         });
     }
     getFileName(file: string): string | null {
         return file.split('.')[0] || null;
     }
-    get(path: string, def: string) {
+    get(path: string, def: string): any {
         return _.get(this.config, path, def);
     }
-    set(path: string, value: string | number) {
+    set(path: string, value: string | number): any {
         return _.set(this.config, path, value);
     }
 }
