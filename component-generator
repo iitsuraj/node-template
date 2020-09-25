@@ -2,27 +2,26 @@
 
 uppercase=$1
 kebabcase="$(echo ${uppercase} | sed -e 's/\([A-Z]\)/\-\1/g' -e 's/\-//' | tr '[:upper:]' '[:lower:]')"
-
+echo ${kebabcase}
 
 echo "creating folder"
-cp -R .template/api components/$kebabcase
-cp -R .template/test tests/api/$kebabcase
+cp -R .template/api src/components/$kebabcase
+cp -R .template/test src/tests/api/$kebabcase
 
 echo "modifying files for api"
-cd ./components/$kebabcase
+cd ./src/components/$kebabcase
 
-for file in $(find . -maxdepth 1 -name "*(qq)*" -type f)
-do
-    #change variable inside file
-    sed -i 's/(QQ)/'$uppercase'/g' "$file"
-    sed -i 's/(qq)/'$kebabcase'/g' "$file"
+for file in $(find . -maxdepth 1 -name "*(qq)*" -type f); do
+  #change variable inside file
+  sed -i 's/(QQ)/'$uppercase'/g' "$file"
+  sed -i 's/(qq)/'$kebabcase'/g' "$file"
 
-    echo '    change' "$file" 'to' `echo "${file//(qq)/$kebabcase}"`
-    mv "$file" `echo "${file//(qq)/$kebabcase}"`
+  echo '    change' "$file" 'to' $(echo "${file//(qq)/$kebabcase}")
+  mv "$file" $(echo "${file//(qq)/$kebabcase}")
 done
 
-# for D in $(find . -depth -name "*(qq)*" -type d) '.' 
-# do 
+# for D in $(find . -depth -name "*(qq)*" -type d) '.'
+# do
 #     pushd $D >> /dev/null
 #     echo 'directory: ' "$D"
 #     for file in $(find . -maxdepth 1 -name "*(qq)*" -type f)
@@ -40,10 +39,12 @@ done
 #     #change only the last occurence of (qq)
 #     mv "$D" `echo "$D"`
 # done
-ls -al .
+# ls -al .
 
 echo "modifying files for test"
 cd ../../tests/api/$kebabcase
 sed -i 's/(qq)/'$kebabcase'/g' "index.js"
 
 echo "process complete"
+
+npm run lint:fix

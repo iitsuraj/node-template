@@ -26,9 +26,9 @@ class ComponentManager {
         });
     }
 
-    registerComponent(name: string): void {
+    async registerComponent(name: string): void {
         if (this.isValidComponent(name)) {
-            this.app.use(`/${process.env.API_PREFIX}/` + name, require('components/' + name + '/' + name + '-api'));
+            this.app.use(`/api/${name}`, await import(`src/components/${name}/${name}-api`));
         } else {
             console.error(path.join(this.path, name) + ' is not valid or may be disabled');
         }
