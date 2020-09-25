@@ -14,7 +14,7 @@ class ComponentManager {
         } else {
             this.pathDir = '/home/app-name/src';
         }
-        this.path = path.join(this.pathDir, 'components');
+        this.path = path.join(this.pathDir, 'src', 'components');
 
         this.disabledComponents = [];
     }
@@ -26,9 +26,10 @@ class ComponentManager {
         });
     }
 
-    async registerComponent(name: string): void {
+    async registerComponent(name: string): Promise<void> {
         if (this.isValidComponent(name)) {
-            this.app.use(`/api/${name}`, await import(`src/components/${name}/${name}-api`));
+            const { default: router } = await import(`src/components/${name}/${name}-api`);
+            this.app.use(`/api/${name}`, router);
         } else {
             console.error(path.join(this.path, name) + ' is not valid or may be disabled');
         }
@@ -37,13 +38,13 @@ class ComponentManager {
     registerModels(dir: string, name: string): void {
         fs.readdirSync(dir).forEach(file => {
             const classFile = path.join(name, path.basename(file));
-            require('components/' + classFile);
+            require('src/components/' + classFile);
         });
     }
 
     isValidComponent(name: string): boolean {
         const files = fs.readdirSync(path.join(this.path, name));
-        const hasFile = files.includes(name + '-api.js');
+        const hasFile = files.includes(name + '-api.ts');
         const notDisabled = !this.disabledComponents.includes(name);
 
         return hasFile && notDisabled;

@@ -8,6 +8,7 @@ import app from 'src/app';
 import ErrorHandler from 'src/helpers/error';
 import controller from './(qq)-controller';
 import validator from './(qq)-validator';
+import express from 'express';
 const router = app.getRouter();
 
 /**
@@ -33,7 +34,7 @@ const router = app.getRouter();
  *
  */
 
-router.get('/', function (req, res, next) {
+router.get('/', function (req: express.Request, res: express.Response, next: express.NextFunction) {
     res.send('(qq) component');
 });
 /* POST response */

@@ -7,8 +7,9 @@
 import Repository from './(qq)-repository';
 import transformer from './(qq)-transformer';
 import ErrorHandler from 'src/helpers/error';
+import express from 'express';
 export default {
-    async create(req, res, next) {
+    async create(req: express.Request, res: express.Response, next: express.NextFunction) {
         try {
             const repo = new Repository();
             const data = await repo.create(req.body);

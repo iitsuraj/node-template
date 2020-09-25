@@ -5,14 +5,14 @@
  */
 
 class (qq)Repository {
-    async find(criteria: any): any {
-        return;
+    async find(criteria: any): Promise<any> {
+        return 'hello';
     }
-    async create((qq): any): any {
+    async create((qq): any): Promise<any> {
         return (qq);
     }
-    async delete(criteria: any): any {
-        return;
+    async delete(criteria: any): Promise<any> {
+        return 'hello';
     }
 }
 
