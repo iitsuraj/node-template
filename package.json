@@ -5,6 +5,7 @@
     "main": "server.js",
     "scripts": {
         "start:prod": "node -r ts-node/register/transpile-only -r tsconfig-paths/register dist/index.js",
+        "start": "tsc -p . && npm run start:prod",
         "dev": "nodemon src/index.ts",
         "build": "tsc -p .",
         "test": "jest",
@@ -38,7 +39,8 @@
         "dotenv": "^8.2.0",
         "express": "^4.17.1",
         "lodash": "^4.17.20",
-        "mongoose": "^5.10.6"
+        "mongoose": "^5.10.6",
+        "winston": "^3.3.3"
     },
     "devDependencies": {
         "@types/amqplib": "^0.5.13",

@@ -1,3 +1,4 @@
+import Logger from 'src/logger';
 type ErrorTypes =
     | 'api_connection_error'
     | 'api_error'
@@ -10,37 +11,14 @@ class ErrorHandler extends Error {
     statusCode: number;
     message: string;
     errorTypes: ErrorTypes;
-    constructor(statusCode: number, message: string, errorTypes: ErrorTypes) {
+    oerror: any;
+    constructor(statusCode: number, message: string, errorTypes: ErrorTypes, oerror: any) {
         super();
         this.statusCode = statusCode;
         this.message = message;
         this.errorTypes = errorTypes;
+        Logger.error(oerror);
     }
 }
 
 export default ErrorHandler;
-
-// switch (err.type) {
-//   case 'StripeCardError':
-//     // A declined card error
-//     err.message; // => e.g. "Your card's expiration year is invalid."
-//     break;
-//   case 'StripeRateLimitError':
-//     // Too many requests made to the API too quickly
-//     break;
-//   case 'StripeInvalidRequestError':
-//     // Invalid parameters were supplied to Stripe's API
-//     break;
-//   case 'StripeAPIError':
-//     // An error occurred internally with Stripe's API
-//     break;
-//   case 'StripeConnectionError':
-//     // Some kind of error occurred during the HTTPS communication
-//     break;
-//   case 'StripeAuthenticationError':
-//     // You probably used an incorrect API key
-//     break;
-//   default:
-//     // Handle any other types of unexpected errors
-//     break;
-// }

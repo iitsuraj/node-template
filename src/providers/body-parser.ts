@@ -5,7 +5,7 @@ class BodyParser {
     constructor(express: express.Application) {
         this.app = express;
     }
-    register() {
+    register(): void {
         this.app.use(bp.json());
         this.app.use(bp.urlencoded({ extended: true }));
     }

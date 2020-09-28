@@ -3,7 +3,7 @@ import http from 'http';
 import configManager from 'src/config-manager';
 import componentManager from 'src/component-manager';
 import express from 'express';
-// import Logger from 'loaders/logger';
+import Logger from './logger';
 
 class Application {
     app: express.Application;
@@ -15,14 +15,14 @@ class Application {
     constructor() {
         this.config = new configManager();
         this.app = express();
-        this.serverConfig = this.config.get('server');
-        this.dbConfig = this.config.get('database');
-        this.serviceProviders = this.config.get('service-provider');
+        this.serverConfig = this.config.get('server').default;
+        this.dbConfig = this.config.get('database').default;
+        this.serviceProviders = this.config.get('service-provider').default;
     }
 
     async setUpDatabase() {
         const db = this.dbConfig;
-        await db.default();
+        await db();
     }
 
     setUpServer() {
@@ -91,8 +91,7 @@ class Application {
         this.setUpServer();
 
         this.server.listen(this.serverConfig.port);
-
-        console.log('server listening on port :' + this.serverConfig.port);
+        Logger.info('server listening on port :' + this.serverConfig.port);
     }
 }
 

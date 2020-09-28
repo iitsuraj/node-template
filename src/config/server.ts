@@ -1,7 +1,7 @@
 // import fs from 'fs';
 import config from 'src/config';
 
-module.exports = {
+export default {
     env: config.node_env,
     protocol: config.protocol,
     host: config.host,

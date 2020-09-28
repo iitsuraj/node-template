@@ -6,10 +6,8 @@
 import mongoose, { Schema } from 'mongoose';
 import ErrorHandler from 'src/helpers/error';
 
-const (qq)Schema = new mongoose.Schema({
+const stateSchema = new mongoose.Schema({
     name: { type: String, default: 'suraj saini' },
-},{
-  timestamps: true
 });
 
 /**
@@ -20,12 +18,12 @@ const (qq)Schema = new mongoose.Schema({
  */
 
 /**
- * @typedef (qq)
+ * @typedef state
  */
 
-export interface I(qq) {
+export interface Istate {
     _id: string;
     name: string;
 }
 
-export default mongoose.model<I(qq) & mongoose.Document>('(qq)', (qq)Schema);
+export default mongoose.model<Istate & mongoose.Document>('state', stateSchema);

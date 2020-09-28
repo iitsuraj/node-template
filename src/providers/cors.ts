@@ -5,7 +5,7 @@ class Cors {
     constructor(express: express.Application) {
         this.app = express;
     }
-    register() {
+    register(): void {
         this.app.use(cors());
     }
 }

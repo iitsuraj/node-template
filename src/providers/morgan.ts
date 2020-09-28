@@ -9,7 +9,7 @@ class Morgan {
         this.mode = config.node_env === 'development' ? 'dev' : 'combined';
     }
 
-    register() {
+    register(): void {
         this.app.use(morgan(this.mode));
     }
 }

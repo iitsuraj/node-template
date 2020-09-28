@@ -18,7 +18,12 @@ export default {
             });
         } catch (error) {
             // Logger call
-            throw new ErrorHandler(500, `Unknown Error Occured : ${error.message || error} `, 'controller_error');
+            throw new ErrorHandler(
+                500,
+                `Unknown Error Occured : ${error.message || error} `,
+                'controller_error',
+                error,
+            );
         }
     },
 };
