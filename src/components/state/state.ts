@@ -1,14 +1,23 @@
-/**
- * Template file for Model layer
- * Work In Progress
- * TODO : complete the files, remove this comment
- */
 import mongoose, { Schema } from 'mongoose';
-import ErrorHandler from 'src/helpers/error';
+// import ErrorHandler from 'src/helpers/error';
 
-const stateSchema = new mongoose.Schema({
-    name: { type: String, default: 'suraj saini' },
-});
+const StateSchema = new mongoose.Schema(
+    {
+        name: {
+            type: String,
+            required: true,
+            unique: true,
+        },
+        short_name: {
+            type: String,
+            required: true,
+            unique: true,
+        },
+    },
+    {
+        timestamps: true,
+    },
+);
 
 /**
  * Add your
@@ -21,9 +30,11 @@ const stateSchema = new mongoose.Schema({
  * @typedef state
  */
 
-export interface Istate {
-    _id: string;
-    name: string;
-}
+// export interface Istate {
+//     _id: string;
+//     name: string;
+// }
 
-export default mongoose.model<Istate & mongoose.Document>('state', stateSchema);
+// export default mongoose.model<Istate & mongoose.Document>('state', stateSchema);
+
+export default mongoose.model('state', StateSchema);

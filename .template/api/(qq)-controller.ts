@@ -7,17 +7,98 @@
 import Repository from './(qq)-repository';
 import transformer from './(qq)-transformer';
 import ErrorHandler from 'src/helpers/error';
-import express from 'express';
+import { Request, Response } from 'express';
+import { update } from 'lodash';
+import { count } from 'console';
+
 export default {
-    async create(req: express.Request, res: express.Response, next: express.NextFunction) {
+    async get(req: Request, res: Response): Promise<any> {
+        try {
+            const repo = new Repository();
+            const data = await repo.get();
+            return res.json({ data: data });
+        } catch (error) {
+            throw new ErrorHandler(
+                500,
+                `Unknown Error Occured : ${error.message || error} `,
+                'controller_error',
+                error,
+            );
+        }
+    },
+    async count(req: Request, res: Response): Promise<any> {
+        try {
+            const repo = new Repository();
+            const data = await repo.count();
+            return res.json({ data: data });
+        } catch (error) {
+            throw new ErrorHandler(
+                500,
+                `Unknown Error Occured : ${error.message || error} `,
+                'controller_error',
+                error,
+            );
+        }
+    },
+    async findOne(req: Request, res: Response): Promise<any> {
+        try {
+            const id = req.params.id;
+            const repo = new Repository();
+            const data = await repo.findById(id);
+            return res.json({ data: data });
+        } catch (error) {
+            throw new ErrorHandler(
+                500,
+                `Unknown Error Occured : ${error.message || error} `,
+                'controller_error',
+                error,
+            );
+        }
+    },
+    async create(req: Request, res: Response): Promise<any> {
         try {
             const repo = new Repository();
             const data = await repo.create(req.body);
+            // want to update data
+            // return res.json({
+            //     data: transformer.create(data),
+            // });
+            // without update data
             return res.json({
-                data: transformer.create(data),
+                data: data,
             });
         } catch (error) {
-            // Logger call
+            throw new ErrorHandler(
+                500,
+                `Unknown Error Occured : ${error.message || error} `,
+                'controller_error',
+                error,
+            );
+        }
+    },
+    async update(req: Request, res: Response): Promise<any> {
+        try {
+            const repo = new Repository();
+            const id = req.params.id;
+            const update = req.body;
+            const data = await repo.updateById(id, update);
+            return res.json({ data: data });
+        } catch (error) {
+            throw new ErrorHandler(
+                500,
+                `Unknown Error Occured : ${error.message || error} `,
+                'controller_error',
+                error,
+            );
+        }
+    },
+    async delete(req: Request, res: Response): Promise<any> {
+        try {
+            const id = req.params.id;
+            const repo = new Repository();
+            const data = repo.delete(id);
+            return res.json({ data: data });
+        } catch (error) {
             throw new ErrorHandler(
                 500,
                 `Unknown Error Occured : ${error.message || error} `,

@@ -1,0 +1,306 @@
+{
+    "data": [
+        [
+            {
+                "short_code": "AG",
+                "name": "Agra"
+            },
+            {
+                "short_code": "AL",
+                "name": "Aligarh"
+            },
+            {
+                "short_code": "AH",
+                "name": "Allahabad"
+            },
+            {
+                "short_code": "AN",
+                "name": "Ambedkar Nagar"
+            },
+            {
+                "short_code": "AM",
+                "name": "Amethi"
+            },
+            {
+                "short_code": "JP",
+                "name": "Amroha"
+            },
+            {
+                "short_code": "AU",
+                "name": "Auraiya"
+            },
+            {
+                "short_code": "AZ",
+                "name": "Azamgarh"
+            },
+            {
+                "short_code": "BG",
+                "name": "Bagpat"
+            },
+            {
+                "short_code": "BH",
+                "name": "Bahraich"
+            },
+            {
+                "short_code": "BL",
+                "name": "Ballia"
+            },
+            {
+                "short_code": "BP",
+                "name": "Balrampur"
+            },
+            {
+                "short_code": "BN",
+                "name": "Banda"
+            },
+            {
+                "short_code": "BB",
+                "name": "Barabanki"
+            },
+            {
+                "short_code": "BR",
+                "name": "Bareilly"
+            },
+            {
+                "short_code": "BS",
+                "name": "Basti"
+            },
+            {
+                "short_code": "BH",
+                "name": "Bhadohi"
+            },
+            {
+                "short_code": "BI",
+                "name": "Bijnor"
+            },
+            {
+                "short_code": "BD",
+                "name": "Budaun"
+            },
+            {
+                "short_code": "BU",
+                "name": "Bulandshahr"
+            },
+            {
+                "short_code": "CD",
+                "name": "Chandauli"
+            },
+            {
+                "short_code": "CT",
+                "name": "Chitrakoot"
+            },
+            {
+                "short_code": "DE",
+                "name": "Deoria"
+            },
+            {
+                "short_code": "ET",
+                "name": "Etah"
+            },
+            {
+                "short_code": "EW",
+                "name": "Etawah"
+            },
+            {
+                "short_code": "FZ",
+                "name": "Faizabad"
+            },
+            {
+                "short_code": "FR",
+                "name": "Farrukhabad"
+            },
+            {
+                "short_code": "FT",
+                "name": "Fatehpur"
+            },
+            {
+                "short_code": "FI",
+                "name": "Firozabad"
+            },
+            {
+                "short_code": "GB",
+                "name": "Gautam Buddh Nagar"
+            },
+            {
+                "short_code": "GZ",
+                "name": "Ghaziabad"
+            },
+            {
+                "short_code": "GP",
+                "name": "Ghazipur"
+            },
+            {
+                "short_code": "GN",
+                "name": "Gonda"
+            },
+            {
+                "short_code": "GR",
+                "name": "Gorakhpur"
+            },
+            {
+                "short_code": "HM",
+                "name": "Hamirpur"
+            },
+            {
+                "short_code": "PN",
+                "name": "Hapur"
+            },
+            {
+                "short_code": "HR",
+                "name": "Hardoi"
+            },
+            {
+                "short_code": "HT",
+                "name": "Hathras"
+            },
+            {
+                "short_code": "JL",
+                "name": "Jalaun"
+            },
+            {
+                "short_code": "JU",
+                "name": "Jaunpur"
+            },
+            {
+                "short_code": "JH",
+                "name": "Jhansi"
+            },
+            {
+                "short_code": "KJ",
+                "name": "Kannauj"
+            },
+            {
+                "short_code": "KD",
+                "name": "Kanpur Dehat"
+            },
+            {
+                "short_code": "KN",
+                "name": "Kanpur Nagar"
+            },
+            {
+                "short_code": "KR",
+                "name": "Kasganj"
+            },
+            {
+                "short_code": "KS",
+                "name": "Kaushambi"
+            },
+            {
+                "short_code": "KU",
+                "name": "Kushinagar"
+            },
+            {
+                "short_code": "LK",
+                "name": "Lakhimpur Kheri"
+            },
+            {
+                "short_code": "LA",
+                "name": "Lalitpur"
+            },
+            {
+                "short_code": "LU",
+                "name": "Lucknow"
+            },
+            {
+                "short_code": "MG",
+                "name": "Maharajganj"
+            },
+            {
+                "short_code": "MH",
+                "name": "Mahoba"
+            },
+            {
+                "short_code": "MP",
+                "name": "Mainpuri"
+            },
+            {
+                "short_code": "MT",
+                "name": "Mathura"
+            },
+            {
+                "short_code": "MB",
+                "name": "Mau"
+            },
+            {
+                "short_code": "ME",
+                "name": "Meerut"
+            },
+            {
+                "short_code": "MI",
+                "name": "Mirzapur"
+            },
+            {
+                "short_code": "MO",
+                "name": "Moradabad"
+            },
+            {
+                "short_code": "MU",
+                "name": "Muzaffarnagar"
+            },
+            {
+                "short_code": "PI",
+                "name": "Pilibhit"
+            },
+            {
+                "short_code": "PR",
+                "name": "Pratapgarh"
+            },
+            {
+                "short_code": "RB",
+                "name": "Raebareli"
+            },
+            {
+                "short_code": "RA",
+                "name": "Rampur"
+            },
+            {
+                "short_code": "SA",
+                "name": "Saharanpur"
+            },
+            {
+                "short_code": "SM",
+                "name": "Sambhal"
+            },
+            {
+                "short_code": "SK",
+                "name": "Sant Kabir Nagar"
+            },
+            {
+                "short_code": "SJ",
+                "name": "Shahjahanpur"
+            },
+            {
+                "short_code": "SH",
+                "name": "Shamli[18]"
+            },
+            {
+                "short_code": "SV",
+                "name": "Shravasti"
+            },
+            {
+                "short_code": "SN",
+                "name": "Siddharthnagar"
+            },
+            {
+                "short_code": "SI",
+                "name": "Sitapur"
+            },
+            {
+                "short_code": "SO",
+                "name": "Sonbhadra"
+            },
+            {
+                "short_code": "SU",
+                "name": "Sultanpur"
+            },
+            {
+                "short_code": "UN",
+                "name": "Unnao"
+            },
+            {
+                "short_code": "VA",
+                "name": "Varanasi"
+            }
+        ]
+    ]
+}

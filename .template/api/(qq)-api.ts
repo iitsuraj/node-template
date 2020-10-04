@@ -11,33 +11,22 @@ import validator from './(qq)-validator';
 import express from 'express';
 const router = app.getRouter();
 
-/**
- * @swagger
- * /(qq):
- *  get:
- *    description: Use to request all (qq)
- *    responses:
- *      '200':
- *        description: A successful response
- *       '401':
- *          description: Unauthorized - No valid API key provided.
- *        '402':
- *           description: Request Failed - The parameters were valid but the request failed.
- *        '403':
- *           description: Forbidden -	The API key doesn't have permissions to perform the request.
- *        '404'
- *            description:  Not Found	- The requested resource doesn't exist.
- *        '429'
- *            description:  Too Many Requests -	Too many requests hit the API too quickly. We recommend an exponential backoff of your requests.
- *        '500,502,503,504'
- *            description: Server Errors	Something went wrong on Stripe's end. (These are rare.)
- *
- */
+/* GET All Data */
+router.get('/', controller.get);
 
-router.get('/', function (req: express.Request, res: express.Response, next: express.NextFunction) {
-    res.send('(qq) component');
-});
-/* POST response */
-router.post('/', validator.request.create, controller.create, validator.response.create);
+// Get All document/collection count
+router.get('/count', controller.count);
 
-module.exports = router;
+// Findone by Id
+router.get('/:id', controller.findOne);
+
+// Create a State
+router.post('/', validator.request.create, controller.create);
+
+// Update a State
+router.put('/:id', controller.update);
+
+// Delete a State
+router.delete('/:id', controller.delete);
+
+export default router;

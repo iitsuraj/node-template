@@ -1,5 +1,11 @@
-import Repository from './state-repository';
-import transformer from './state-transformer';
+/**
+ * Template file for Controller layer
+ * Work In Progress
+ * TODO : complete the files, remove this comment
+ */
+
+import Repository from './invite-repository';
+import transformer from './invite-transformer';
 import ErrorHandler from 'src/helpers/error';
 import { Request, Response } from 'express';
 import { update } from 'lodash';

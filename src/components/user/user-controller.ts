@@ -1,5 +1,5 @@
-import Repository from './state-repository';
-import transformer from './state-transformer';
+import Repository from './user-repository';
+import transformer from './user-transformer';
 import ErrorHandler from 'src/helpers/error';
 import { Request, Response } from 'express';
 import { update } from 'lodash';

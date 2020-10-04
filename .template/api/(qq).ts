@@ -6,11 +6,14 @@
 import mongoose, { Schema } from 'mongoose';
 import ErrorHandler from 'src/helpers/error';
 
-const (qq)Schema = new mongoose.Schema({
-    name: { type: String, default: 'suraj saini' },
-},{
-  timestamps: true
-});
+const (QQ)Schema = new mongoose.Schema(
+    {
+        name: { type: String, default: 'suraj saini' },
+    },
+    {
+        timestamps: true,
+    },
+);
 
 /**
  * Add your
@@ -28,4 +31,4 @@ export interface I(qq) {
     name: string;
 }
 
-export default mongoose.model<I(qq) & mongoose.Document>('(qq)', (qq)Schema);
+export default mongoose.model<I(qq) & mongoose.Document>('(qq)', (QQ)Schema);
